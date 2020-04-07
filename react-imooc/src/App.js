@@ -17,8 +17,23 @@ return <h2>骑兵连连长{props.老大}，冲啊</h2>
 }
 
 class 一营 extends React.Component{
+  constructor(props) {
+    super(props) 
+    this.state = {
+      solders: ['虎子','柱子','王根生']
+    }
+  }
   render(){
-    return <h2>独立团，团长{this.props.老大}</h2>
+    return  (
+      <div>
+        <h2>独立团，团长{this.props.老大}</h2>
+        <ul>
+          {this.state.solders.map(v => {
+            return <li key={v}>{v}</li>
+          })}
+        </ul>
+      </div>
+    )
   }
 }
 
