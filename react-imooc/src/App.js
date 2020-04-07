@@ -1,4 +1,6 @@
 import React from 'react';
+import {Button,List} from 'antd-mobile';
+import 'antd-mobile/dist/antd-mobile.css'
 
 class App extends React.Component{
   render() {
@@ -24,6 +26,12 @@ class 一营 extends React.Component{
     }
     // this.addSolder = this.addSolder.bind(this)
   }
+  componentWillMount() {
+    console.log('组件马上就要加载了');
+  }
+  componentDidMount() {
+    console.log('组件加载完毕');
+  }
   addSolder() {
     console.log('hello add solder');
     this.setState({
@@ -31,15 +39,16 @@ class 一营 extends React.Component{
     })
   }
   render(){
+    console.log('组件正在加载了');
     return  (
       <div>
         <h2>一营营长，团长{this.props.老大}</h2>
-        <button onClick={() => this.addSolder()}>新兵入伍</button>
-        <ul>
+        <Button type='primary' onClick={() => this.addSolder()}>新兵入伍</Button>
+        <List renderHeader={() => '士兵列表'}>
           {this.state.solders.map(v => {
-            return <li key={v}>{v}</li>
+            return <List.Item key={v}>{v}</List.Item>
           })}
-        </ul>
+        </List>
       </div>
     )
   }
