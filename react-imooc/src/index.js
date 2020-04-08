@@ -8,7 +8,9 @@ import {Provider} from 'react-redux'
 // import { counter } from './index.redux'
 import reducer from './reducer'
 import Auth from './Auth'
-import Dashboard from './Dashboard';
+import Dashboard from './Dashboard'
+import './config'
+import 'antd-mobile/dist/antd-mobile.css'
 
 
 
