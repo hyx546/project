@@ -18,11 +18,4 @@ class Test extends Component {
     )
   }
 }
-const mapStatetoProps = (state) => {
-  return {
-    num:state
-  }
-}
-
-
 export default Test

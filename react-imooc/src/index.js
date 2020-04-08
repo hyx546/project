@@ -1,10 +1,9 @@
 import React from 'react'
 import ReactDom from 'react-dom'
-import Test from './Test'
 import {createStore, applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
 
-import {BrowserRouter,Route,Link,Switch,Redirect} from 'react-router-dom'
+import {BrowserRouter,Route,Switch,Redirect} from 'react-router-dom'
 import {Provider} from 'react-redux'
 // import { counter } from './index.redux'
 import reducer from './reducer'
