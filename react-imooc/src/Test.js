@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {addGUN,removeGUN,addGunAsync} from './index.redux'
 
-export class Test extends Component {
+class Test extends Component {
   render() {
     return (
       <div>

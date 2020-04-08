@@ -28,6 +28,16 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "babel":{
+    "plugins": [
+      [
+        "@babel/plugin-proposal-decorators",
+        {
+          "legacy": true
+        }
+      ]
+    ]
+  },
   "browserslist": {
     "production": [
       ">0.2%",

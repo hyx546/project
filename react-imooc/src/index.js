@@ -4,14 +4,17 @@ import Test from './Test'
 import {createStore, applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
 
-import {BrowserRouter,Route,Link} from 'react-router-dom'
+import {BrowserRouter,Route,Link,Switch,Redirect} from 'react-router-dom'
 import {Provider} from 'react-redux'
-import { counter } from './index.redux'
+// import { counter } from './index.redux'
+import reducer from './reducer'
+import Auth from './Auth'
+import Dashboard from './Dashboard';
 
 
 
 // const store = createStore(counter,applyMiddleware(thunk))
-const store = createStore(counter,compose(
+const store = createStore(reducer,compose(
   applyMiddleware(thunk),
   window.devToolsExtension?window.devToolsExtension(): f=>f
 ))
@@ -23,32 +26,31 @@ const store = createStore(counter,compose(
 
 // store.subscribe(render)
 
-function Erying() {
-  return <h2>二营</h2>
-}
-function Qibinglian() {
-  return <h2>骑兵连</h2>
-}
+// class Demo extends React.Component{
+//   render() {
+//     console.log(this.props);
+//     this.props.history.push('/')
+//     return(
+//     <h2>测试组件</h2>
+//     )
+//   }
+// }
+// 登录
+//   没有登录信息 统一跳转login
+// 页面 导航+显示+注销
+//   一营
+//    二营
+//   骑兵连
 
 ReactDom.render(
 (<Provider store={store}>
     <BrowserRouter>
-      <div>
-        <ul>
-          <li>
-            <Link to='/'>一营</Link>
-          </li>
-          <li>
-            <Link to='/erying'>二营</Link>
-          </li>
-          <li>
-            <Link to='/qibinglian'>骑兵连</Link>
-          </li>
-        </ul>
-        <Route path='/'exact component={Test}></Route>
-        <Route path='/erying' component={Erying}></Route>
-        <Route path='/qibinglian' component={Qibinglian}></Route>
-      </div>
+      <Switch>
+        {/* exact表明比如完全匹配       路由对应渲染模版*/}
+        <Route path='/login'exact component={Auth}></Route>
+        <Route path='/dashboard' component={Dashboard}></Route>
+        <Redirect to='/dashboard'></Redirect>
+      </Switch>
     </BrowserRouter>
   </Provider>),
   document.getElementById('root'))
