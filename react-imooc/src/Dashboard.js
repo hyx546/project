@@ -19,10 +19,12 @@ function Qibinglian() {
 
 class Dashboard extends Component {
   render() {
-    
+
     const redirectToLogin = <Redirect to='/login'></Redirect>
     const app = (
       <div>
+        <h1>独立团</h1>
+        {this.props.isAuth? <button onClick={this.props.logout}>注销</button> : null}
       <ul>
         <li><Link to='/dashboard'>一营</Link></li>
         <li><Link to='/dashboard/erying'>二营</Link></li>
@@ -33,7 +35,7 @@ class Dashboard extends Component {
       <Route path='/dashboard/qibinglian' component={Qibinglian}></Route>
     </div>
     )
-    return 
+    return  this.props.isAuth? app:redirectToLogin;
   }
 }
 

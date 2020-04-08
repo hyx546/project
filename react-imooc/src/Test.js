@@ -2,6 +2,10 @@ import React, { Component } from 'react'
 import {connect} from 'react-redux';
 import {addGUN,removeGUN,addGunAsync} from './index.redux'
 
+@connect (
+  state => ({num:state.counter}),
+  {addGUN,removeGUN,addGunAsync}
+)
 class Test extends Component {
   render() {
     return (
@@ -19,7 +23,6 @@ const mapStatetoProps = (state) => {
     num:state
   }
 }
-const actionCreators = {addGUN,removeGUN,addGunAsync}
 
-Test = connect(mapStatetoProps,actionCreators)(Test)
+
 export default Test

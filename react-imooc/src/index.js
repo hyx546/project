@@ -43,7 +43,7 @@ const store = createStore(reducer,compose(
 //   骑兵连
 
 ReactDom.render(
-(<Provider store={store}>
+  (<Provider store={store}>
     <BrowserRouter>
       <Switch>
         {/* exact表明比如完全匹配       路由对应渲染模版*/}
@@ -53,4 +53,5 @@ ReactDom.render(
       </Switch>
     </BrowserRouter>
   </Provider>),
-  document.getElementById('root'))
+  document.getElementById('root')
+)
