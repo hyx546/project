@@ -3,6 +3,8 @@ import ReactDom from 'react-dom'
 import Test from './Test'
 import {createStore, applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
+
+import {BrowserRouter,Route,Link} from 'react-router-dom'
 import {Provider} from 'react-redux'
 import { counter } from './index.redux'
 
@@ -21,8 +23,32 @@ const store = createStore(counter,compose(
 
 // store.subscribe(render)
 
+function Erying() {
+  return <h2>二营</h2>
+}
+function Qibinglian() {
+  return <h2>骑兵连</h2>
+}
+
 ReactDom.render(
-  (<Provider store={store}>
-    <Test/>,
-    </Provider>),
+(<Provider store={store}>
+    <BrowserRouter>
+      <div>
+        <ul>
+          <li>
+            <Link to='/'>一营</Link>
+          </li>
+          <li>
+            <Link to='/erying'>二营</Link>
+          </li>
+          <li>
+            <Link to='/qibinglian'>骑兵连</Link>
+          </li>
+        </ul>
+        <Route path='/'exact component={Test}></Route>
+        <Route path='/erying' component={Erying}></Route>
+        <Route path='/qibinglian' component={Qibinglian}></Route>
+      </div>
+    </BrowserRouter>
+  </Provider>),
   document.getElementById('root'))
