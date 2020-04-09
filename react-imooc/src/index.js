@@ -5,53 +5,32 @@ import thunk from 'redux-thunk'
 
 import {BrowserRouter,Route,Switch,Redirect} from 'react-router-dom'
 import {Provider} from 'react-redux'
-// import { counter } from './index.redux'
-import reducer from './reducer'
-import Auth from './Auth'
-import Dashboard from './Dashboard'
+
+import reducers from './reducer'
 import './config'
-import 'antd-mobile/dist/antd-mobile.css'
+import Register from './container/register/register'
+import Login from './container/login/login'
 
-
+import AuthRoute from './component/authroute/authroute'
 
 // const store = createStore(counter,applyMiddleware(thunk))
-const store = createStore(reducer,compose(
+const store = createStore(reducers,compose(
   applyMiddleware(thunk),
   window.devToolsExtension?window.devToolsExtension(): f=>f
 ))
-
-// function render() {
-//   ReactDom.render(<Test store={store} addGUN={addGUN} removeGUN={removeGUN} addGunAsync={addGunAsync}/>,document.getElementById('root'))
-// }
-// render()
-
-// store.subscribe(render)
-
-// class Demo extends React.Component{
-//   render() {
-//     console.log(this.props);
-//     this.props.history.push('/')
-//     return(
-//     <h2>测试组件</h2>
-//     )
-//   }
-// }
-// 登录
-//   没有登录信息 统一跳转login
-// 页面 导航+显示+注销
-//   一营
-//    二营
-//   骑兵连
+function Boss() {
+  return <h2>Boss</h2>
+}
 
 ReactDom.render(
   (<Provider store={store}>
     <BrowserRouter>
-      <Switch>
-        {/* exact表明比如完全匹配       路由对应渲染模版*/}
-        <Route path='/login'exact component={Auth}></Route>
-        <Route path='/dashboard' component={Dashboard}></Route>
-        <Redirect to='/dashboard'></Redirect>
-      </Switch>
+      <div>
+        <AuthRoute></AuthRoute>
+        <Route path='/boss' component={Boss}></Route>
+        <Route path='/login' component={Login}></Route>
+        <Route path='/register' component={Register}></Route>
+      </div>
     </BrowserRouter>
   </Provider>),
   document.getElementById('root')
