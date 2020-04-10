@@ -3,7 +3,7 @@ import ReactDom from 'react-dom'
 import {createStore, applyMiddleware,compose} from 'redux'
 import thunk from 'redux-thunk'
 
-import {BrowserRouter,Route,Switch,Redirect} from 'react-router-dom'
+import {BrowserRouter,Route} from 'react-router-dom'
 import {Provider} from 'react-redux'
 
 import reducers from './reducer'
@@ -12,6 +12,7 @@ import Register from './container/register/register'
 import Login from './container/login/login'
 
 import AuthRoute from './component/authroute/authroute'
+import './index.css'
 
 // const store = createStore(counter,applyMiddleware(thunk))
 const store = createStore(reducers,compose(
