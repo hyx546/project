@@ -88,7 +88,7 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -2062,6 +2062,17 @@ __webpack_require__.r(__webpack_exports__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
+const events = ['routeChangeStart', 'routeChangeComplete', 'routeChangeError', 'beforeHistoryChange', 'hashChangeStart', 'hashChangeComplete'];
+
+function makeEvent(type) {
+  return (...args) => {
+    console.log(type, ...args);
+  };
+}
+
+events.forEach(event => {
+  next_router__WEBPACK_IMPORTED_MODULE_3___default.a.events.on(event, makeEvent(event));
+});
 /* harmony default export */ __webpack_exports__["default"] = (() => {
   function gotoTestB() {
     next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push({
@@ -2082,7 +2093,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 /***/ }),
 
-/***/ 4:
+/***/ 5:
 /*!******************************!*\
   !*** multi ./pages/index.js ***!
   \******************************/

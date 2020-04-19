@@ -16623,6 +16623,23 @@ __webpack_require__.r(__webpack_exports__);
 var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 
+var events = ['routeChangeStart', 'routeChangeComplete', 'routeChangeError', 'beforeHistoryChange', 'hashChangeStart', 'hashChangeComplete'];
+
+function makeEvent(type) {
+  return function () {
+    var _console;
+
+    for (var _len = arguments.length, args = new Array(_len), _key = 0; _key < _len; _key++) {
+      args[_key] = arguments[_key];
+    }
+
+    (_console = console).log.apply(_console, [type].concat(args));
+  };
+}
+
+events.forEach(function (event) {
+  next_router__WEBPACK_IMPORTED_MODULE_3___default.a.events.on(event, makeEvent(event));
+});
 /* harmony default export */ __webpack_exports__["default"] = (function () {
   function gotoTestB() {
     next_router__WEBPACK_IMPORTED_MODULE_3___default.a.push({
@@ -16643,7 +16660,7 @@ var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
 
 /***/ }),
 
-/***/ 2:
+/***/ 4:
 /*!*********************************************************************************************************************************************************************!*\
   !*** multi next-client-pages-loader?page=%2F&absolutePagePath=%2FUsers%2Fxiaokeai%2FDocuments%2Fgithub%2Fproject%2Freact%2Fnext%2Fnextjs-Github%2Fpages%2Findex.js ***!
   \*********************************************************************************************************************************************************************/
@@ -16666,5 +16683,5 @@ module.exports = dll_2adc2403d89adc16ead0;
 
 /***/ })
 
-},[[2,"static/runtime/webpack.js"]]]);
+},[[4,"static/runtime/webpack.js"]]]);
 //# sourceMappingURL=index.js.map
