@@ -2049,25 +2049,37 @@ if (false) {} else {
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! react */ "react");
-/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
-/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_1__);
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/router */ "next/router");
-/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! styled-jsx/style */ "styled-jsx/style");
+/* harmony import */ var styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0__);
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! react */ "react");
+/* harmony import */ var react__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! next/link */ "./node_modules/next/link.js");
+/* harmony import */ var next_link__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(next_link__WEBPACK_IMPORTED_MODULE_2__);
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! next/router */ "next/router");
+/* harmony import */ var next_router__WEBPACK_IMPORTED_MODULE_3___default = /*#__PURE__*/__webpack_require__.n(next_router__WEBPACK_IMPORTED_MODULE_3__);
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4__ = __webpack_require__(/*! next/head */ "next/head");
+/* harmony import */ var next_head__WEBPACK_IMPORTED_MODULE_4___default = /*#__PURE__*/__webpack_require__.n(next_head__WEBPACK_IMPORTED_MODULE_4__);
 
-var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
+
+var __jsx = react__WEBPACK_IMPORTED_MODULE_1___default.a.createElement;
+
 
 
 
 const A = ({
   router,
   name
-}) => __jsx(next_link__WEBPACK_IMPORTED_MODULE_1___default.a, {
+}) => __jsx(react__WEBPACK_IMPORTED_MODULE_1___default.a.Fragment, null, __jsx(next_link__WEBPACK_IMPORTED_MODULE_2___default.a, {
   href: "#aaa"
-}, __jsx("a", null, router.query.id, name));
+}, __jsx("a", {
+  className: "jsx-128472148"
+}, router.query.id, name)), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  id: "919521323"
+}, "a.jsx-128472148{color:blue;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy94aWFva2VhaS9Eb2N1bWVudHMvZ2l0aHViL3Byb2plY3QvcmVhY3QvbmV4dC9uZXh0anMtR2l0aHViL3BhZ2VzL2EuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBVWdCLEFBR29CLFdBQ2IiLCJmaWxlIjoiL1VzZXJzL3hpYW9rZWFpL0RvY3VtZW50cy9naXRodWIvcHJvamVjdC9yZWFjdC9uZXh0L25leHRqcy1HaXRodWIvcGFnZXMvYS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCB7d2l0aFJvdXRlcn0gZnJvbSAnbmV4dC9yb3V0ZXInXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5cbmNvbnN0IEEgPSAoe3JvdXRlcixuYW1lfSkgPT4gKFxuICA8PlxuICAgIDxMaW5rIGhyZWY9XCIjYWFhXCI+XG4gICAgICA8YT57cm91dGVyLnF1ZXJ5LmlkfXtuYW1lfTwvYT5cbiAgICA8L0xpbms+XG5cbiAgICA8c3R5bGUganN4PntgXG4gICAgICBhIHtcbiAgICAgICAgY29sb3I6IGJsdWU7XG4gICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgIGEge1xuICAgICAgICBjb2xvcjogcmVkO1xuICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICA8Lz5cbilcbkEuZ2V0SW5pdGlhbFByb3BzID0gYXN5bmMoY3R4KSA9PiB7XG5cbiAgY29uc3QgcHJvbWlzZSA9IG5ldyBQcm9taXNlKChyZXNvbHZlLCByZWplY3QpID0+IHtcbiAgICBzZXRUaW1lb3V0KCgpID0+IHtcbiAgICAgIHJlc29sdmUoe1xuICAgICAgICBuYW1lOiAnd24nXG4gICAgICB9KVxuICAgIH0sMTAwMClcbiAgfSlcbiAgcmV0dXJuIGF3YWl0IHByb21pc2Vcbn1cblxuZXhwb3J0IGRlZmF1bHQgIHdpdGhSb3V0ZXIoQSkiXX0= */\n/*@ sourceURL=/Users/xiaokeai/Documents/github/project/react/next/nextjs-Github/pages/a.js */"), __jsx(styled_jsx_style__WEBPACK_IMPORTED_MODULE_0___default.a, {
+  id: "3236241942"
+}, "a{color:red;}\n/*# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIi9Vc2Vycy94aWFva2VhaS9Eb2N1bWVudHMvZ2l0aHViL3Byb2plY3QvcmVhY3QvbmV4dC9uZXh0anMtR2l0aHViL3BhZ2VzL2EuanMiXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IkFBZXVCLEFBR21CLFVBQ1oiLCJmaWxlIjoiL1VzZXJzL3hpYW9rZWFpL0RvY3VtZW50cy9naXRodWIvcHJvamVjdC9yZWFjdC9uZXh0L25leHRqcy1HaXRodWIvcGFnZXMvYS5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBMaW5rIGZyb20gJ25leHQvbGluaydcbmltcG9ydCB7d2l0aFJvdXRlcn0gZnJvbSAnbmV4dC9yb3V0ZXInXG5pbXBvcnQgSGVhZCBmcm9tICduZXh0L2hlYWQnXG5cbmNvbnN0IEEgPSAoe3JvdXRlcixuYW1lfSkgPT4gKFxuICA8PlxuICAgIDxMaW5rIGhyZWY9XCIjYWFhXCI+XG4gICAgICA8YT57cm91dGVyLnF1ZXJ5LmlkfXtuYW1lfTwvYT5cbiAgICA8L0xpbms+XG5cbiAgICA8c3R5bGUganN4PntgXG4gICAgICBhIHtcbiAgICAgICAgY29sb3I6IGJsdWU7XG4gICAgICB9XG4gICAgICBgfTwvc3R5bGU+XG4gICAgPHN0eWxlIGpzeCBnbG9iYWw+e2BcbiAgICAgIGEge1xuICAgICAgICBjb2xvcjogcmVkO1xuICAgICAgfVxuICAgICAgYH08L3N0eWxlPlxuICA8Lz5cbilcbkEuZ2V0SW5pdGlhbFByb3BzID0gYXN5bmMoY3R4KSA9PiB7XG5cbiAgY29uc3QgcHJvbWlzZSA9IG5ldyBQcm9taXNlKChyZXNvbHZlLCByZWplY3QpID0+IHtcbiAgICBzZXRUaW1lb3V0KCgpID0+IHtcbiAgICAgIHJlc29sdmUoe1xuICAgICAgICBuYW1lOiAnd24nXG4gICAgICB9KVxuICAgIH0sMTAwMClcbiAgfSlcbiAgcmV0dXJuIGF3YWl0IHByb21pc2Vcbn1cblxuZXhwb3J0IGRlZmF1bHQgIHdpdGhSb3V0ZXIoQSkiXX0= */\n/*@ sourceURL=/Users/xiaokeai/Documents/github/project/react/next/nextjs-Github/pages/a.js */"));
 
-A.getInitialProps = async () => {
+A.getInitialProps = async ctx => {
   const promise = new Promise((resolve, reject) => {
     setTimeout(() => {
       resolve({
@@ -2078,7 +2090,7 @@ A.getInitialProps = async () => {
   return await promise;
 };
 
-/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_2__["withRouter"])(A));
+/* harmony default export */ __webpack_exports__["default"] = (Object(next_router__WEBPACK_IMPORTED_MODULE_3__["withRouter"])(A));
 
 /***/ }),
 
@@ -2091,6 +2103,17 @@ A.getInitialProps = async () => {
 
 module.exports = __webpack_require__(/*! /Users/xiaokeai/Documents/github/project/react/next/nextjs-Github/pages/a.js */"./pages/a.js");
 
+
+/***/ }),
+
+/***/ "next/head":
+/*!****************************!*\
+  !*** external "next/head" ***!
+  \****************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("next/head");
 
 /***/ }),
 
@@ -2135,6 +2158,17 @@ module.exports = require("prop-types-exact");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-jsx/style":
+/*!***********************************!*\
+  !*** external "styled-jsx/style" ***!
+  \***********************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-jsx/style");
 
 /***/ }),
 
