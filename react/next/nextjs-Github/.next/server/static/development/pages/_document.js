@@ -882,6 +882,8 @@ __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var react__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(react__WEBPACK_IMPORTED_MODULE_0__);
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! next/document */ "./node_modules/next/document.js");
 /* harmony import */ var next_document__WEBPACK_IMPORTED_MODULE_1___default = /*#__PURE__*/__webpack_require__.n(next_document__WEBPACK_IMPORTED_MODULE_1__);
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! styled-components */ "styled-components");
+/* harmony import */ var styled_components__WEBPACK_IMPORTED_MODULE_2___default = /*#__PURE__*/__webpack_require__.n(styled_components__WEBPACK_IMPORTED_MODULE_2__);
 
 var __jsx = react__WEBPACK_IMPORTED_MODULE_0___default.a.createElement;
 
@@ -893,11 +895,36 @@ function _defineProperty(obj, key, value) { if (key in obj) { Object.definePrope
 
 
 
+ // HOC
+// function withLog (Comp) {
+//   return (props) => {
+//     console.log(props);
+//     return <Comp {...props}></Comp>
+//   }
+// }
+
 class myDocument extends next_document__WEBPACK_IMPORTED_MODULE_1___default.a {
   static async getInitialProps(ctx) {
-    // ctx.renderPage = () => 
-    const props = await next_document__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(ctx);
-    return _objectSpread({}, props);
+    const sheet = new styled_components__WEBPACK_IMPORTED_MODULE_2__["ServerStyleSheet"]();
+    const originalRenderPage = ctx.renderPage;
+
+    try {
+      ctx.renderPage = () => originalRenderPage({
+        enhanceApp: App => props => sheet.collectStyles(__jsx(App, props))
+      });
+
+      const props = await next_document__WEBPACK_IMPORTED_MODULE_1___default.a.getInitialProps(ctx);
+      return _objectSpread({}, props, {
+        styles: __jsx(react__WEBPACK_IMPORTED_MODULE_0___default.a.Fragment, null, props.styles, sheet.getStyleElement())
+      });
+    } finally {
+      sheet.seal();
+    } // const originalRenderPage = ctx.renderPage
+    // ctx.renderPage = () => originalRenderPage ({
+    //   enhanceApp: App => App,
+    //   enhanceComponent: Component => withLog(Component)
+    // })
+
   }
 
   render() {
@@ -941,6 +968,17 @@ module.exports = require("prop-types");
 /***/ (function(module, exports) {
 
 module.exports = require("react");
+
+/***/ }),
+
+/***/ "styled-components":
+/*!************************************!*\
+  !*** external "styled-components" ***!
+  \************************************/
+/*! no static exports found */
+/***/ (function(module, exports) {
+
+module.exports = require("styled-components");
 
 /***/ }),
 
